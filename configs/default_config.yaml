@@ -1,0 +1,30 @@
+experiment:
+  name: "NeuralBasis_Benchmark"
+  seed: 2024
+  output_dir: "outputs"
+
+data:
+  mnist:
+    train_size: 10000  # Reduced for faster benchmarking on CPU
+    test_size: 1000
+  spiral:
+    n_points: 1000
+    K: 4
+    sigma: 0.3
+
+training:
+  epochs: 20
+  batch_size: 64
+  learning_rate: 0.01
+  
+optimizer_params:
+  sgd:
+    lr: 0.01
+  momentum:
+    lr: 0.01
+    momentum: 0.9
+  adam:
+    lr: 0.001
+    beta1: 0.9
+    beta2: 0.999
+    epsilon: 1.0e-8
